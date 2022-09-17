@@ -1,20 +1,28 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import AuthProvider from './src/Contexts/AuthContext';
+import RoutesProvider from './src/Contexts/RoutesContext';
+
+import OpenView from './src/Screens/OpenView'
+
+import { Provider as PaperProvider } from 'react-native-paper';
+import ContactsList from './src/Components/ContactsList';
+
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+
+
+    <PaperProvider>
+      <RoutesProvider>
+        <AuthProvider>
+          <OpenView />
+        </AuthProvider>
+      </RoutesProvider>
+    </PaperProvider>
+
+    /*     <View style={{flex: 1}}>
+          <ContactsList />
+        </View> */
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
