@@ -124,7 +124,6 @@ const SignUp = () => {
         <Hello />
         <UserNameForm nome={nome} setNome={setNome}/>
         <Image />
-        
         <ContactSection contatos={listaContatos} /> 
         
         
